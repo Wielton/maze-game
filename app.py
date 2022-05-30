@@ -16,23 +16,29 @@ print("-----------------------------")
 board = gameboard.GameBoard()
 # A new player was created starting at position 3,2
 player = player.Player(3,2)
+game_check = board.checkMove
+print(game_check)
 while True:
     board.printBoard(player.rowPosition, player.columnPosition)
     selection = input("Make a move: ")
     # TODO
     # Move the player through the board
-    if (selection == (str.lower("left"))):
-        player.moveLeft()
-    elif (selection == (str.lower("right"))): 
-        player.moveRight()
-    elif (selection == (str.lower("up"))):
-        player.moveUp()
-    elif (selection == (str.lower("down"))):
-        player.moveDown()
-    else: 
-        print("Please select a direction: left, right, up, down:")
-        input("Make a move: ")
-        
+    while game_check(player.rowPosition, player.columnPosition) == True:
+        if (selection == (str.lower("left"))):
+                player.moveLeft()
+        elif (selection == (str.lower("right"))):
+            if game_check(player.rowPosition, player.columnPosition):
+                player.moveRight()
+        elif (selection == (str.lower("up"))):
+            if game_check(player.rowPosition, player.columnPosition):
+                player.moveUp()
+        elif (selection == (str.lower("down"))):
+            if game_check(player.rowPosition, player.columnPosition):
+                player.moveDown()
+        else: 
+            print("Please select a direction: left, right, up, down:")
+            input("Make a move: ")
+    
             
         
     # Check if the player has won, if so print a message and break the loop!
