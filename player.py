@@ -5,13 +5,13 @@ class Player:
 
     # TODO
     def moveUp(self):
-        self.rowPosition -= 1
+        self.rowPosition -=1
     # TODO
     def moveDown(self):
-        self.rowPosition += 1
+        self.rowPosition +=1
     # TODO
     def moveLeft(self):
-        self.columnPosition -= 1
+        self.columnPosition -=1
     # TODO
     def moveRight(self):
-        self.columnPosition += 1
+        self.columnPosition +=1
