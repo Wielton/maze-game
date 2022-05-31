@@ -23,48 +23,33 @@ win_check = board.checkWin
 while True:
     board.printBoard(player.rowPosition, player.columnPosition)
     selection = input("Make a move: ")
+    
     # TODO
     # Move the player through the board
-    # while game_check(player.rowPosition, player.columnPosition) == True:
-    if (selection == (str.lower("left"))):
+    
+    if (selection == (str.lower("a"))):
         if move_check(player.rowPosition,player.columnPosition):
             player.moveLeft()
-            if win_check(player.rowPosition,player.columnPosition):
-                break
-        else:
-            print('error')
-    elif (selection == (str.lower("right"))):
+        if win_check(player.rowPosition,player.columnPosition):
+            break
+    elif (selection == (str.lower("d"))):
         if move_check(player.rowPosition,player.columnPosition):
             player.moveRight()
-            if win_check(player.rowPosition,player.columnPosition):
-                break
-        else:
-            print('error')
-        player.moveRight()
-    elif (selection == (str.lower("up"))):
+        if win_check(player.rowPosition,player.columnPosition):
+            break
+    elif (selection == (str.lower("w"))):
         if move_check(player.rowPosition,player.columnPosition):
             player.moveUp()
-            if win_check(player.rowPosition,player.columnPosition):
-                break
-        else:
-            print('error')
-        player.moveUp()
-    elif (selection == (str.lower("down"))):
+        if win_check(player.rowPosition,player.columnPosition):
+            break
+    elif (selection == (str.lower("s"))):
         if move_check(player.rowPosition,player.columnPosition):
             player.moveDown()
-            if win_check:
-                break
-        else:
-            print('error')
-    else: 
-        print("Please select a direction: left, right, up, down:")
-        input("Make a move: ")
-    # else:
-    #     game_check = False
-            
-        
+        if win_check(player.rowPosition,player.columnPosition):
+            break
     # Check if the player has won, if so print a message and break the loop!
-
+    else:
+        continue
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------    
 
@@ -73,10 +58,10 @@ while True:
 
 # The overall idea is every "turn" the player takes is one iteration through the infinite loop in the app.py. In this loop you will need to:
 
-# Figure out what direction the user wants to move  --DONE--
-# Check to see if the user can move in that direction
-# Move the user if the move is valid  --DONE--
-# Check to see if the user has won
+# Figure out what direction the user wants to move  --COMPLETE--
+# Check to see if the user can move in that direction --NOT COMPLETE--
+# Move the user if the move is valid  --COMPLETE--
+# Check to see if the user has won --COMPLETE--a
 
 # BONUS:
 # Figure out how to change the game board. Make it bigger, add more walls

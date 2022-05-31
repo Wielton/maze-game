@@ -1,6 +1,3 @@
-import re
-
-
 class GameBoard:
     def __init__(self):
         self.winningRow = 0
@@ -55,6 +52,8 @@ class GameBoard:
     def checkWin(self, playerRow, playerColumn):
         if playerRow == self.winningRow and playerColumn == self.winningColumn:
             print("You escaped!!")
+            return True
+        return False
                 
         
             
