@@ -30,26 +30,29 @@ while True:
     if (selection == (str.lower("a"))):
         if move_check(player.rowPosition,player.columnPosition):
             player.moveLeft()
-        if win_check(player.rowPosition,player.columnPosition):
-            break
-    elif (selection == (str.lower("d"))):
+            # Check if the player has won, if so print a message and break the loop!
+            if win_check(player.rowPosition,player.columnPosition):
+                break
+            continue
+    if (selection == (str.lower("d"))):
         if move_check(player.rowPosition,player.columnPosition):
             player.moveRight()
-        if win_check(player.rowPosition,player.columnPosition):
-            break
-    elif (selection == (str.lower("w"))):
+            if win_check(player.rowPosition,player.columnPosition):
+                break
+            continue
+    if (selection == (str.lower("w"))):
         if move_check(player.rowPosition,player.columnPosition):
             player.moveUp()
-        if win_check(player.rowPosition,player.columnPosition):
-            break
-    elif (selection == (str.lower("s"))):
+            if win_check(player.rowPosition,player.columnPosition):
+                break
+            continue
+    if (selection == (str.lower("s"))):
         if move_check(player.rowPosition,player.columnPosition):
             player.moveDown()
-        if win_check(player.rowPosition,player.columnPosition):
-            break
-    # Check if the player has won, if so print a message and break the loop!
-    else:
-        continue
+            if win_check(player.rowPosition,player.columnPosition):
+                break
+            continue
+    
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------    
 
@@ -61,7 +64,7 @@ while True:
 # Figure out what direction the user wants to move  --COMPLETE--
 # Check to see if the user can move in that direction --NOT COMPLETE--
 # Move the user if the move is valid  --COMPLETE--
-# Check to see if the user has won --COMPLETE--a
+# Check to see if the user has won --COMPLETE--
 
 # BONUS:
 # Figure out how to change the game board. Make it bigger, add more walls
